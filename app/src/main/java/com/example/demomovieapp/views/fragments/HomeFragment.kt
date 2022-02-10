@@ -58,7 +58,11 @@ class HomeFragment : Fragment(), OnItemClickCallback<Movie> {
             when (resources.status) {
                 LiveDataResource.Status.SUCCESS -> {
                     _binding?.progressView?.visibility = View.GONE
-                    _binding?.viewPrompt?.visibility = View.VISIBLE
+                    if (_binding?.etSearchView?.text?.isNotEmpty() == true) {
+                        _binding?.viewPrompt?.visibility = View.GONE
+                    } else {
+                        _binding?.viewPrompt?.visibility = View.VISIBLE
+                    }
                     mAdapter.submitList(resources.data?.data)
                 }
                 LiveDataResource.Status.ERROR -> {

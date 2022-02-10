@@ -14,6 +14,7 @@
         android:theme="@style/Theme.DemoMovieApp">
         <activity
             android:name=".views.MainActivity"
+            android:theme="@style/Theme.Design.NoActionBar"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

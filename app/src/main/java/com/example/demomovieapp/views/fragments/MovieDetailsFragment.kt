@@ -1,11 +1,12 @@
 package com.example.demomovieapp.views.fragments
 
+import android.graphics.Color
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
@@ -20,11 +21,7 @@ import com.example.demomovieapp.data.network.LiveDataResource
 import com.example.demomovieapp.databinding.FragmentMovieDetailsBinding
 import com.example.demomovieapp.utils.Constants
 import com.example.demomovieapp.viewModels.MovieViewModel
-import java.math.BigDecimal
-import java.text.DateFormat
 import java.text.SimpleDateFormat
-import java.time.Duration
-import java.util.*
 
 class MovieDetailsFragment : Fragment() {
 
@@ -129,6 +126,7 @@ class MovieDetailsFragment : Fragment() {
             _binding?.tvMovieName?.text = it.title
             _binding?.tvRating?.text = ((it.voteAverage ?: 0.0) * 5 * 10).div(100).toString()
             _binding?.ratingBar?.rating = ((it.voteAverage ?: 0.0) * 5 * 10).div(100).toFloat()
+            _binding?.ratingBar?.setBackgroundColor(Color.WHITE)
             _binding?.tvMovieDescription?.text = it.overview
             val random1 = (0..18).random()
             val random2 = (0..18).random()
