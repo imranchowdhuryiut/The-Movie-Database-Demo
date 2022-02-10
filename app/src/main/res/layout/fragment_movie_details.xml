@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@color/dark_blue"
+    tools:context=".views.fragments.MovieDetailsFragment">
+
+
+    <ScrollView
+        android:id="@+id/svMovie"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:id="@+id/rlMovie"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_400sdp">
+
+                <ImageView
+                    android:id="@+id/imgMoviePoster"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY"
+                    tools:src="@drawable/captain_marvel_3" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:background="@drawable/gradient"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMovieName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_24ssp"
+                            tools:text="@string/captain_marvel" />
+
+                        <TextView
+                            android:id="@+id/tvMovieInfo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:layout_marginBottom="@dimen/_4sdp"
+                            android:textAlignment="center"
+                            android:textColor="@color/grey"
+                            android:textSize="@dimen/_16ssp"
+                            tools:text="2019 | Action, Fantasy | 2h 34min" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/tvRating"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="@dimen/_4sdp"
+                                android:textColor="@color/white"
+                                android:textSize="@dimen/_12ssp"
+                                tools:text="4.5" />
+
+                            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                                android:id="@+id/ratingBar"
+                                style="@style/Widget.MaterialRatingBar.RatingBar"
+                                android:layout_width="wrap_content"
+                                android:layout_height="@dimen/_16sdp"
+                                android:progressBackgroundTint="@color/white"
+                                android:rating="3"
+                                app:mrb_progressTint="@color/yellow" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+            <TextView
+                android:id="@+id/tvMovieDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_60sdp"
+                android:layout_below="@+id/rlMovie"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_16ssp"
+                android:layout_marginEnd="@dimen/_32sdp"
+                android:ellipsize="end"
+                android:maxLines="3"
+                android:textColor="@color/grey"
+                android:textSize="@dimen/_15ssp"
+                tools:text="Distributed by Walt Disney Studios Motion Pictures, it is the 21st film in the Marvel Cinematic Universe (MCU)." />
+
+            <TextView
+                android:id="@+id/tvCastPrompt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvMovieDescription"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:text="@string/cast"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp" />
+
+            <RelativeLayout
+                android:id="@+id/rlCast"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvCastPrompt"
+                android:layout_marginStart="@dimen/_32sdp"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginBottom="@dimen/_74sdp"
+                android:orientation="horizontal">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgCast1"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    app:civ_border_width="1dp"
+                    tools:src="@drawable/cast" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgCast2"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="-12dp"
+                    android:layout_toEndOf="@+id/imgCast1"
+                    app:civ_border_width="1dp"
+                    tools:src="@drawable/cast" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgCast3"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="-12dp"
+                    android:layout_toEndOf="@+id/imgCast2"
+                    android:src="@drawable/ic_baseline_error_24"
+                    app:civ_border_width="1dp"
+                    tools:src="@drawable/cast" />
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/imgCast4"
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="-12dp"
+                    android:layout_toEndOf="@+id/imgCast3"
+                    android:src="@drawable/ic_baseline_error_24"
+                    tools:src="@drawable/cast" />
+
+                <RelativeLayout
+                    android:layout_width="@dimen/_40sdp"
+                    android:layout_height="@dimen/_40sdp"
+                    android:layout_marginStart="-12dp"
+                    android:layout_toEndOf="@+id/imgCast4">
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/imgCast5"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/ic_baseline_error_24"
+                        tools:src="@drawable/cast" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/gradient">
+
+                        <TextView
+                            android:id="@+id/tvCastPlus"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:textAlignment="center"
+                            android:textColor="@color/white"
+                            android:textSize="@dimen/_16ssp"
+                            tools:text="6+" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+    <RelativeLayout
+        android:id="@+id/rlBottomBar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_68sdp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dark_blue">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:id="@+id/imgSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_18sdp"
+                android:src="@drawable/ic_save" />
+
+            <ImageView
+                android:id="@+id/imgWatchNow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/imgSave"
+                android:src="@drawable/ic_watch_now" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="@dimen/_5sdp"
+            android:src="@drawable/ic_line" />
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/btnBack"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_marginStart="@dimen/_16sdp"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_baseline_keyboard_arrow_left_24" />
+
+    <ImageView
+        android:id="@+id/imgSaveIcon"
+        android:layout_width="@dimen/_24sdp"
+        android:layout_height="@dimen/_24sdp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="@dimen/_16sdp"
+        android:layout_marginEnd="@dimen/_16sdp"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_download" />
+
+    <ProgressBar
+        android:id="@+id/progressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:progressTint="@color/white"/>
+
+</RelativeLayout>

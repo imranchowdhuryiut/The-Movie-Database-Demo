@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/containerView"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/dark_blue"
+    android:paddingBottom="@dimen/_10sdp"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMoviePoster"
+        app:cardCornerRadius="@dimen/_8sdp"
+        android:layout_width="wrap_content"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imgMoviePoster"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_154sdp"
+            android:scaleType="fitXY"
+            android:src="@drawable/captain_marvel_3"/>
+
+    </androidx.cardview.widget.CardView>
+
+    <LinearLayout
+        android:layout_centerVertical="true"
+        android:layout_toEndOf="@+id/cvMoviePoster"
+        android:layout_width="wrap_content"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tvName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="Captain America"
+            android:textColor="@color/white"
+            android:layout_marginBottom="@dimen/_4sdp"
+            android:textSize="@dimen/_15ssp"/>
+
+        <TextView
+            android:id="@+id/tvSubText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/grey"
+            android:textSize="@dimen/_12ssp"
+            android:layout_marginBottom="@dimen/_4sdp"
+            tools:text="2017 | Fantasy, Action"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <me.zhanghai.android.materialratingbar.MaterialRatingBar
+                android:id="@+id/ratingBar"
+                style="@style/Widget.MaterialRatingBar.RatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/_16sdp"
+                android:progressBackgroundTint="@color/white"
+                android:numStars="1"
+                android:rating="3"
+                app:mrb_progressTint="@color/yellow" />
+
+            <TextView
+                android:id="@+id/tvRating"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12ssp"
+                tools:text="4.5" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/imgWatchNow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_button_small"
+            android:layout_marginTop="@dimen/_16ssp"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
